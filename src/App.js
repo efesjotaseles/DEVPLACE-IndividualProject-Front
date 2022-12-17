@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "../node_modules/@picocss/pico/css/pico.min.css";
+import Meow from "./components/Meow";
+import Navbar from "./components/Navbar";
+import Feed from "./Feed";
+import Home from "./Home";
+import RegisterForm from "./RegisterForm";
 
 function App() {
+  const timeOptions = {
+    weekday: "short",
+    month: "numeric",
+    year: "numeric",
+    day: "numeric",
+  };
+  const sampleMeows = [
+    {
+      sender: "Un gato",
+      content: "miau miau miau",
+      date: new Date(Date.now()).toString(),
+    },
+    {
+      sender: "Otro gato",
+      content: "miau miau",
+      date: new Date(Date.now()).toString(),
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar/>
+      <div className="grid" style={{marginTop: "15vh"}} >
+        <div></div>
+        <div>
+          <Feed meows={sampleMeows} />
+        </div>
+        <div></div>
+      </div>
+      <Home />
+      <RegisterForm />
+    </>
   );
 }
 
