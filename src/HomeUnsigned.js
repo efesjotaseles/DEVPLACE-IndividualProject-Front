@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Home() {
+export default function HomeUnsigned() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
@@ -14,7 +14,7 @@ export default function Home() {
     //TODO proper login
     alert(`User: ${email} \nPassword: ${password}`);
   }
-
+  
   return (
     <>
       <div className="grid">
